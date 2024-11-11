@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<locale.h>
+#include<stdlib.h>
+main(){
+	setlocale(LC_ALL,"portuguese");
+	int vetor[100],idade,soma,qtdIddM,qtdIddm;
+	float media;
+	for(int i=0;i<100;i++){
+		printf(" %d� Cliente. Digite a sua idade: ",i+1);
+		scanf("%d",&idade);
+		vetor[i]=idade;
+		if(vetor[i]<18){
+	qtdIddm++;
+	}else if(vetor[i]>=18){
+	qtdIddM++;
+	soma+=idade;
+	}
+}
+media=soma/qtdIddM;
+	printf(" A quantidade de pessoas Menores de idade � = %d\n",qtdIddm);
+	printf(" A M�dia de pessoas Maiores de idade � = %.2f",media);
+}
+
