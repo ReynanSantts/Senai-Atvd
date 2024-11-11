@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<locale.h>
+#include<time.h>
+#include<stdlib.h>
+int main(){
+setlocale(LC_ALL,"portuguese");
+srand(time(0));
+int matriz[3][3],procurar,encontrado=false;
+int linha,coluna,Maior,Menor;
+int indlinhaMaior,indcolunaMaior,indlinhaMenor,indcolunaMenor;
+for(linha=0;linha<3;linha++){
+for(coluna=0;coluna<3;coluna++){
+matriz[linha][coluna]=rand()%501;
+printf("[%d][%d]=%d\n",linha,coluna,matriz[linha][coluna]);
+
+if(matriz[linha][coluna]>Maior || linha==0  && coluna==0)
+{
+    Maior=matriz[linha][coluna];
+    indlinhaMaior=linha;
+    indcolunaMaior=coluna;
+}
+if(matriz[linha][coluna]<Menor || linha==0 && coluna==0)
+{
+    Menor=matriz[linha][coluna];
+     indlinhaMenor=linha;
+    indcolunaMenor=coluna;
+}
+}
+}
+printf(" O maior n�mero digitado foi %d [%d][%d]\n",Maior,indlinhaMaior,indcolunaMaior);
+printf(" O menor n�mero digitado foi %d [%d][%d]\n",Menor,indlinhaMenor,indcolunaMenor);
+printf(" Digite um valor para procurar: ");
+scanf("%d",&procurar);
+	for(linha=0;linha<3;linha++){
+		 for(coluna=0;coluna<3;coluna++){
+		 	 if(procurar==matriz[linha][coluna]){
+		 	 	printf(" Valor encontrado foi %d [%d][%d]\n",matriz[linha][coluna],linha,coluna);
+		 	 	encontrado=true;
+		 }
+}
+}
+if(encontrado!=true){
+printf(" Valor n�o encontrado. ");
+}
+}
